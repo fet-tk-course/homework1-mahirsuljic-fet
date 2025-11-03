@@ -24,11 +24,10 @@ Funkcije:
   Radi isto što i `customGroupByCategory`. \
   Korištena je funkcija `groupingBy` jer je potrebno grupisati podatke podatke.
 - `customSortByDownloadsDesc` \
-  Uzima listu aplikacija i vraća listu aplikacija koja je sortirana po broju preuzimanja. Pri tome vrijedi pomenuti da sortiranje nije stabilno. \
-  Korištena je funkcija `sortedBy` jer je potrebno sortirati podatke, a zatim `reversed` jer `sortedBy` sortira od najmanjeg prema najvećem, a u zadatku je navedeno da je potrebno sortirati od najvećeg do najmanjeg.
+  Uzima listu aplikacija i vraća listu aplikacija koja je sortirana po broju preuzimanja. Sortiranje je implementirano koristeći bubble sort algoritam.
 - `sortByDownloadsDesc` \
-  Radi isto što i `customSortByDownloadsDesc`, ali je sortiranje stabilno. \
-  Korištena je funkcija `sortedByDescending` umjesto `sortedBy` i `reversed`.
+  Radi isto što i `customSortByDownloadsDesc`. \
+  Korištena je funkcija `sortedByDescending` jer je potrebno sortirati u silaznom poredku.
 - `averageSizeByCategory` \
   Uzima listu aplikacija i vraća mapu čiji je ključ kategorija, a vrijednost prosječna veličina aplikacija iz date liste koje imaju tu kategoriju. \
   Korištena je funkcija `fold` jer je potrebno proći kroz cijelu listu i napraviti mapu od nje. Ključ mape je kategorija, a vrijednost je par, gdje je prva vrijednost zbir veličina aplikacija te kategorije, a druga vrijednost broj aplikacija u toj kategoriji. Na kraju je korištena funkcija `mapValues` koja uzima zbir (prva vrijednost para) i dijeli ga sa brojačem (druga vrijednost para), čime se dobija prosjek. Time se dobija mapa koja mapira kategoriju u proječnu veličinu aplikacije iz te kategorije.

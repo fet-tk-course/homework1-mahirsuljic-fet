@@ -38,7 +38,25 @@ fun groupByCategory(appList: List<Application>): Map<Category, Int> {
 /// SORTING ///
 ///////////////
 fun customSortByDownloadsDesc(appList: List<Application>): List<Application> {
-    return appList.sortedBy { it.downloads }.reversed()
+    var sorted = false
+    val result = appList.toMutableList()
+
+    // bubble sort
+    while (!sorted) {
+        sorted = true
+        for ((i, app) in result.withIndex()) {
+            if (i + 1 >= result.size) break
+
+            if (result[i + 1].downloads > app.downloads) {
+                val temp = result[i]
+                result[i] = result[i + 1]
+                result[i + 1] = temp
+                sorted = false
+            }
+        }
+    }
+
+    return result
 }
 
 fun sortByDownloadsDesc(appList: List<Application>): List<Application> {
