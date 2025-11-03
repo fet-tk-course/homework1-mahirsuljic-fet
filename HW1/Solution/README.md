@@ -44,6 +44,12 @@ Funkcije:
 - `prettyPrint` \
   Uzima listu aplikacija, pretvara ih u string pomoću `prettyFormat` i ispisuje ih. \
   Korištena je funkcija `map` kako bi se aplikacije pretvorile u string-ove, a zatim pomoću `forEach` se ispisuje svaki element liste.
+- `findDeveloperWithMostDownloads` \
+  Pronalazi developera sa najvećim ukupnim brojem preuzimanja. \
+  Korištena je funkcija `map` kako bi se za svakog developera izračunao zbir preuzimanja njegovih aplikacija. Mapira developera u par gdje je ključ sam developer, a vrijednost broj preuzimanja. Korišena je funkcija `sumOf` kako bi se sabrala preuzimanja svih developerovih aplikacija. Korištena je funkcija `maxBy` kako bi se pronašao developer sa najvećim brojem preuzimanja.
+- `getAverageRating` \
+  Pronalazi prosječnu ocjenu developerovih aplikacija. \
+  Korišena je funkcija `sumOf` kako bi se izračunala suma ocijena developerovih aplikacija, što je potrebno za računanje prosjeka.
 
 Moguće je koristiti ove funkcije kako bi se pronašli specifični podaci iz velike liste podataka.
 Nakon što se podaci pronađu mogu se proslijediti u neki *view* kao *RecyclerView* ili slično.
