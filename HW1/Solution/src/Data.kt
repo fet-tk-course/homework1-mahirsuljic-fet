@@ -110,3 +110,37 @@ val devList = listOf<Developer>(
         appList.drop(appList.size / 2).toMutableList()
     )
 )
+
+val provjeraTestData = listOf<Application>(
+    Application(
+        "App1",
+        Category.Productivity,
+        10,
+        5.0,
+        10.0
+    ),
+
+    Application(
+        "App2",
+        Category.Productivity,
+        20,
+        4.0,
+        10.0
+    ),
+
+    Application(
+        "App3",
+        Category.Communication,
+        10,
+        3.0,
+        10.0
+    ),
+
+    Application(
+        "App4",
+        Category.Communication,
+        20,
+        2.0,
+        10.0
+    )
+)

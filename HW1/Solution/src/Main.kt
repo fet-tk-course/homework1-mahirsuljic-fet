@@ -1,11 +1,13 @@
 fun main() {
-    filterTests()
-    groupTests()
-    findTests()
-    constructorTests()
-    developerTests()
+//    filterTests()
+//    groupTests()
+//    findTests()
+//    constructorTests()
+//    developerTests()
+//
+//    println("\nAll tests passed!")
 
-    println("\nAll tests passed!")
+    println(getMaxWeightedRating(provjeraTestData))
 }
 
 fun filterTests() {

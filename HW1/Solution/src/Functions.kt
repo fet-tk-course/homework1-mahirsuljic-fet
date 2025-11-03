@@ -136,3 +136,22 @@ fun findDeveloperWithMostDownloads(devList: List<Developer>): Developer {
 fun getAverageRating(developer: Developer): Double {
     return developer.appList.sumOf { application -> application.rating } / developer.appList.size
 }
+
+////////////////
+/// PROVJERA ///
+////////////////
+fun weightedRatingByCategory(appList: List<Application>): Map<Category, Double> {
+    val map = mutableMapOf<Category, Pair<Double, Long>>()
+
+    for (app in appList) {
+        val prevValue = map.getOrDefault(app.category, Pair(0.0, 0))
+        val newValue = Pair(prevValue.first + app.rating * app.downloads, prevValue.second + app.downloads)
+        map[app.category] = newValue
+    }
+
+    return map.mapValues { it.value.first / it.value.second }
+}
+
+fun getMaxWeightedRating(appList: List<Application>): Category {
+    return weightedRatingByCategory(appList).maxBy { it.value }.key
+}
