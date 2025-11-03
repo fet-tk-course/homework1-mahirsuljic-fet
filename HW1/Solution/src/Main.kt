@@ -3,6 +3,7 @@ fun main() {
     groupTests()
     findTests()
     constructorTests()
+    developerTests()
 
     println("\nAll tests passed!")
 }
@@ -78,4 +79,11 @@ fun constructorTests() {
     check(thrown)
 
     println("Constructor tests passed.")
+}
+
+fun developerTests() {
+    check(findDeveloperWithMostDownloads(devList) == devList[0])
+    check(getAverageRating(devList.first()) == (4.0 + 5.0 / 12.0))
+
+    println("Developer tests passed.")
 }

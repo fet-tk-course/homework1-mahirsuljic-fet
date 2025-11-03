@@ -78,7 +78,6 @@ fun findByNameAndPrint(appList: List<Application>, name: String): Unit {
 /////////////
 /// PRINT ///
 /////////////
-
 fun compactifyNumber(number: Long): String {
     val formatPairs = listOf(
         Pair(1_000_000_000, "B+"),
@@ -104,4 +103,18 @@ fun prettyFormat(app: Application): String {
 
 fun prettyPrint(appList: List<Application>): Unit {
     appList.map { app -> prettyFormat(app) }.forEach(::println)
+}
+
+/////////////////
+/// DEVELOPER ///
+/////////////////
+fun findDeveloperWithMostDownloads(devList: List<Developer>): Developer {
+    return devList
+        .map { Pair(it, it.appList.sumOf { application -> application.downloads }) }
+        .maxBy { it.second }
+        .first
+}
+
+fun getAverageRating(developer: Developer): Double {
+    return developer.appList.sumOf { application -> application.rating } / developer.appList.size
 }

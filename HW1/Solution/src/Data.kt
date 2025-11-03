@@ -96,3 +96,17 @@ val appList = listOf<Application>(
         300.0
     )
 )
+
+val devList = listOf<Developer>(
+    Developer(
+        "Developer1",
+        "BiH",
+        appList.take(appList.size / 2).toMutableList()
+    ),
+
+    Developer(
+        "Developer2",
+        "BiH",
+        appList.drop(appList.size / 2).toMutableList()
+    )
+)
